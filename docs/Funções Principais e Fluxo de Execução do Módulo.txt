@@ -1,0 +1,9 @@
+Fluxo de Execução do Módulo
+- Entrada: o usuário informa o caminho da imagem.
+- Carregamento: a imagem é lida e convertida para o espaço de cor YCrCb.
+- Normalização Global: o brilho do canal Y é ajustado com base no histograma.
+- Equalização Adaptativa: aplica-se o CLAHE para realçar o contraste local.
+- Ajuste Regional: a imagem é dividida em blocos e o contraste é ajustado automaticamente por região.
+- Geração do Mapa de Contraste: destaca áreas muito claras ou muito escuras.
+- Registro dos Resultados: métricas e imagens são salvas em arquivos .csv e/ou .png.
+- Saída: imagem final processada e dados documentados.

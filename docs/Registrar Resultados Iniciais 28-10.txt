@@ -1,0 +1,1 @@
+Conseguimos fazer as funções iniciais, como a equalização adaptativa com Clahe, os ajustes de contraste e brilho via sliders, deixando de forma mais intuitiva para o usuário, e navegação via teclado com alguns comandos para auxiliar os mesmos.

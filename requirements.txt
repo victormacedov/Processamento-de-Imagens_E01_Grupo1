@@ -1,3 +1,4 @@
-opencv-python
 numpy
-tqdm
+opencv-python
+Pillow
+jupyter

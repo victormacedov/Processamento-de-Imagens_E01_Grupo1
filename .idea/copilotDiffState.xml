@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="$PROJECT_DIR$/extract_notebook.py">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/extract_notebook.py" />
+              <option name="updatedContent" value="import json&#10;&#10;with open('src/main.ipynb', 'r', encoding='utf-8') as f:&#10;    notebook = json.load(f)&#10;&#10;for i, cell in enumerate(notebook['cells']):&#10;    if cell['cell_type'] == 'code':&#10;        print(f&quot;\n{'='*80}&quot;)&#10;        print(f&quot;Cell {i}&quot;)&#10;        print('='*80)&#10;        print(''.join(cell['source']))&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/view_notebook.py">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/view_notebook.py" />
+              <option name="updatedContent" value="import json&#10;import sys&#10;&#10;with open('src/main.ipynb', 'r', encoding='utf-8') as f:&#10;    notebook = json.load(f)&#10;&#10;code_cells = []&#10;for cell in notebook['cells']:&#10;    if cell['cell_type'] == 'code':&#10;        code_cells.append(''.join(cell['source']))&#10;&#10;full_code = '\n\n'.join(code_cells)&#10;&#10;# Find specific sections&#10;sections = [&#10;    ('on_zoom_change', 265, 270),&#10;    ('update_display', 622, 800),&#10;    ('adjust_zoom_scale', 586, 625),&#10;]&#10;&#10;lines = full_code.split('\n')&#10;print(f&quot;Total lines: {len(lines)}\n&quot;)&#10;&#10;# Print key methods&#10;for keyword in ['def on_zoom_change', 'def update_display', 'def adjust_zoom_scale', 'def __init__', 'self.zoom_scale = Scale']:&#10;    for i, line in enumerate(lines):&#10;        if keyword in line:&#10;            start = max(0, i-2)&#10;            end = min(len(lines), i+30)&#10;            print(f&quot;\n{'='*80}&quot;)&#10;            print(f&quot;Lines {start}-{end}: Found '{keyword}'&quot;)&#10;            print('='*80)&#10;            for j in range(start, end):&#10;                print(f&quot;{j:4d}: {lines[j]}&quot;)&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
